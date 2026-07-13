@@ -12,6 +12,15 @@ playground
 tmp
 dist
 ts-dist
+!packages/client/dist/
+!packages/core/dist/
+!packages/effect-drizzle-sqlite/dist/
+!packages/effect-sqlite-node/dist/
+!packages/llm/dist/
+!packages/protocol/dist/
+!packages/schema/dist/
+!packages/sdk-next/dist/
+!packages/server/dist/
 .turbo
 **/.serena
 .serena/
