@@ -6,33 +6,100 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "prepare": "node build.mjs",
     "setup:recording-env": "bun run script/setup-recording-env.ts",
     "test": "bun test --timeout 30000 --only-failures",
     "typecheck": "tsgo --noEmit"
   },
   "exports": {
-    ".": "./src/index.ts",
-    "./route": "./src/route/index.ts",
-    "./provider": "./src/provider.ts",
-    "./providers": "./src/providers/index.ts",
-    "./providers/amazon-bedrock": "./src/providers/amazon-bedrock.ts",
-    "./providers/anthropic": "./src/providers/anthropic.ts",
-    "./providers/azure": "./src/providers/azure.ts",
-    "./providers/cloudflare": "./src/providers/cloudflare.ts",
-    "./providers/github-copilot": "./src/providers/github-copilot.ts",
-    "./providers/google": "./src/providers/google.ts",
-    "./providers/openai": "./src/providers/openai.ts",
-    "./providers/openai-compatible": "./src/providers/openai-compatible.ts",
-    "./providers/openai-compatible-profile": "./src/providers/openai-compatible-profile.ts",
-    "./providers/openrouter": "./src/providers/openrouter.ts",
-    "./providers/xai": "./src/providers/xai.ts",
-    "./protocols": "./src/protocols/index.ts",
-    "./protocols/anthropic-messages": "./src/protocols/anthropic-messages.ts",
-    "./protocols/bedrock-converse": "./src/protocols/bedrock-converse.ts",
-    "./protocols/gemini": "./src/protocols/gemini.ts",
-    "./protocols/openai-chat": "./src/protocols/openai-chat.ts",
-    "./protocols/openai-compatible-chat": "./src/protocols/openai-compatible-chat.ts",
-    "./protocols/openai-responses": "./src/protocols/openai-responses.ts"
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./route": {
+      "types": "./src/route/index.ts",
+      "default": "./dist/route/index.js"
+    },
+    "./provider": {
+      "types": "./src/provider.ts",
+      "default": "./dist/provider.js"
+    },
+    "./providers": {
+      "types": "./src/providers/index.ts",
+      "default": "./dist/providers/index.js"
+    },
+    "./providers/amazon-bedrock": {
+      "types": "./src/providers/amazon-bedrock.ts",
+      "default": "./dist/providers/amazon-bedrock.js"
+    },
+    "./providers/anthropic": {
+      "types": "./src/providers/anthropic.ts",
+      "default": "./dist/providers/anthropic.js"
+    },
+    "./providers/azure": {
+      "types": "./src/providers/azure.ts",
+      "default": "./dist/providers/azure.js"
+    },
+    "./providers/cloudflare": {
+      "types": "./src/providers/cloudflare.ts",
+      "default": "./dist/providers/cloudflare.js"
+    },
+    "./providers/github-copilot": {
+      "types": "./src/providers/github-copilot.ts",
+      "default": "./dist/providers/github-copilot.js"
+    },
+    "./providers/google": {
+      "types": "./src/providers/google.ts",
+      "default": "./dist/providers/google.js"
+    },
+    "./providers/openai": {
+      "types": "./src/providers/openai.ts",
+      "default": "./dist/providers/openai.js"
+    },
+    "./providers/openai-compatible": {
+      "types": "./src/providers/openai-compatible.ts",
+      "default": "./dist/providers/openai-compatible.js"
+    },
+    "./providers/openai-compatible-profile": {
+      "types": "./src/providers/openai-compatible-profile.ts",
+      "default": "./dist/providers/openai-compatible-profile.js"
+    },
+    "./providers/openrouter": {
+      "types": "./src/providers/openrouter.ts",
+      "default": "./dist/providers/openrouter.js"
+    },
+    "./providers/xai": {
+      "types": "./src/providers/xai.ts",
+      "default": "./dist/providers/xai.js"
+    },
+    "./protocols": {
+      "types": "./src/protocols/index.ts",
+      "default": "./dist/protocols/index.js"
+    },
+    "./protocols/anthropic-messages": {
+      "types": "./src/protocols/anthropic-messages.ts",
+      "default": "./dist/protocols/anthropic-messages.js"
+    },
+    "./protocols/bedrock-converse": {
+      "types": "./src/protocols/bedrock-converse.ts",
+      "default": "./dist/protocols/bedrock-converse.js"
+    },
+    "./protocols/gemini": {
+      "types": "./src/protocols/gemini.ts",
+      "default": "./dist/protocols/gemini.js"
+    },
+    "./protocols/openai-chat": {
+      "types": "./src/protocols/openai-chat.ts",
+      "default": "./dist/protocols/openai-chat.js"
+    },
+    "./protocols/openai-compatible-chat": {
+      "types": "./src/protocols/openai-compatible-chat.ts",
+      "default": "./dist/protocols/openai-compatible-chat.js"
+    },
+    "./protocols/openai-responses": {
+      "types": "./src/protocols/openai-responses.ts",
+      "default": "./dist/protocols/openai-responses.js"
+    }
   },
   "devDependencies": {
     "@clack/prompts": "1.0.0-alpha.1",
@@ -40,7 +107,8 @@
     "@opencode-ai/http-recorder": "workspace:*",
     "@tsconfig/bun": "catalog:",
     "@types/bun": "catalog:",
-    "@typescript/native-preview": "catalog:"
+    "@typescript/native-preview": "catalog:",
+    "esbuild": "0.25.12"
   },
   "dependencies": {
     "@smithy/eventstream-codec": "4.2.14",

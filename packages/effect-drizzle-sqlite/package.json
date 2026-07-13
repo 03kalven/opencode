@@ -6,20 +6,34 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "prepare": "node build.mjs",
     "test": "bun test --timeout 30000 --only-failures",
     "typecheck": "tsgo --noEmit"
   },
   "exports": {
-    ".": "./src/index.ts",
-    "./effect-sqlite": "./src/effect-sqlite/index.ts",
-    "./effect-sqlite/migrator": "./src/effect-sqlite/migrator.ts",
-    "./sqlite-core/effect": "./src/sqlite-core/effect/index.ts"
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./effect-sqlite": {
+      "types": "./src/effect-sqlite/index.ts",
+      "default": "./dist/effect-sqlite/index.js"
+    },
+    "./effect-sqlite/migrator": {
+      "types": "./src/effect-sqlite/migrator.ts",
+      "default": "./dist/effect-sqlite/migrator.js"
+    },
+    "./sqlite-core/effect": {
+      "types": "./src/sqlite-core/effect/index.ts",
+      "default": "./dist/sqlite-core/effect/index.js"
+    }
   },
   "devDependencies": {
     "@effect/sql-sqlite-bun": "catalog:",
     "@tsconfig/bun": "catalog:",
     "@types/bun": "catalog:",
-    "@typescript/native-preview": "catalog:"
+    "@typescript/native-preview": "catalog:",
+    "esbuild": "0.25.12"
   },
   "dependencies": {
     "drizzle-orm": "catalog:",

@@ -5,10 +5,17 @@
   "type": "module",
   "license": "MIT",
   "exports": {
-    ".": "./src/index.ts",
-    "./*": "./src/*.ts"
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./src/*.ts",
+      "default": "./dist/*.js"
+    }
   },
   "scripts": {
+    "prepare": "node build.mjs",
     "typecheck": "tsgo --noEmit"
   },
   "dependencies": {
@@ -17,6 +24,7 @@
   "devDependencies": {
     "@tsconfig/bun": "catalog:",
     "@types/bun": "catalog:",
-    "@typescript/native-preview": "catalog:"
+    "@typescript/native-preview": "catalog:",
+    "esbuild": "0.25.12"
   }
 }

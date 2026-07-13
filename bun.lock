@@ -133,6 +133,7 @@
         "@types/bun": "catalog:",
         "@typescript/native-preview": "catalog:",
         "effect": "catalog:",
+        "esbuild": "0.25.12",
       },
       "peerDependencies": {
         "effect": "4.0.0-beta.83",
@@ -376,6 +377,7 @@
         "@types/turndown": "5.0.5",
         "@types/which": "3.0.4",
         "drizzle-kit": "catalog:",
+        "esbuild": "0.25.12",
       },
     },
     "packages/desktop": {
@@ -444,6 +446,7 @@
         "@tsconfig/bun": "catalog:",
         "@types/bun": "catalog:",
         "@typescript/native-preview": "catalog:",
+        "esbuild": "0.25.12",
       },
     },
     "packages/effect-sqlite-node": {
@@ -456,6 +459,7 @@
         "@tsconfig/bun": "catalog:",
         "@types/node": "catalog:",
         "@typescript/native-preview": "catalog:",
+        "esbuild": "0.25.12",
       },
     },
     "packages/enterprise": {
@@ -554,6 +558,7 @@
         "@tsconfig/bun": "catalog:",
         "@types/bun": "catalog:",
         "@typescript/native-preview": "catalog:",
+        "esbuild": "0.25.12",
       },
     },
     "packages/opencode": {
@@ -726,6 +731,7 @@
         "@tsconfig/bun": "catalog:",
         "@types/bun": "catalog:",
         "@typescript/native-preview": "catalog:",
+        "esbuild": "0.25.12",
       },
     },
     "packages/schema": {
@@ -737,6 +743,7 @@
         "@tsconfig/bun": "catalog:",
         "@types/bun": "catalog:",
         "@typescript/native-preview": "catalog:",
+        "esbuild": "0.25.12",
       },
     },
     "packages/script": {
@@ -761,6 +768,7 @@
         "@tsconfig/bun": "catalog:",
         "@types/bun": "catalog:",
         "@typescript/native-preview": "catalog:",
+        "esbuild": "0.25.12",
       },
     },
     "packages/sdk/js": {
@@ -791,6 +799,7 @@
         "@tsconfig/bun": "catalog:",
         "@types/bun": "catalog:",
         "@typescript/native-preview": "catalog:",
+        "esbuild": "0.25.12",
       },
     },
     "packages/session-ui": {

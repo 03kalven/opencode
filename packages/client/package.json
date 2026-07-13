@@ -5,10 +5,17 @@
   "type": "module",
   "license": "MIT",
   "exports": {
-    ".": "./src/index.ts",
-    "./effect": "./src/effect.ts"
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./effect": {
+      "types": "./src/effect.ts",
+      "default": "./dist/effect.js"
+    }
   },
   "scripts": {
+    "prepare": "node build.mjs",
     "generate": "bun run script/build.ts",
     "check:generated": "bun run generate && git diff --exit-code -- src/generated src/generated-effect",
     "test": "bun test --timeout 5000",
@@ -34,6 +41,7 @@
     "@tsconfig/bun": "catalog:",
     "@types/bun": "catalog:",
     "@typescript/native-preview": "catalog:",
-    "effect": "catalog:"
+    "effect": "catalog:",
+    "esbuild": "0.25.12"
   }
 }
